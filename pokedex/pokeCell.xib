@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="100" reuseIdentifier="pokedexCell" rowHeight="150" id="MLT-6d-Vaa" customClass="PokeTableViewCell" customModule="pokedex" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="517" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MLT-6d-Vaa" id="Kd2-Yn-2zr">
+                <rect key="frame" x="0.0" y="0.0" width="517" height="150"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVM-NY-TFv">
+                        <rect key="frame" x="10" y="10" width="497" height="120"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="KYx-i6-IZL">
+                                <rect key="frame" x="10" y="10" width="477" height="100"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Chy-T5-tGq">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="sAr-bQ-JMK"/>
+                                            <constraint firstAttribute="width" constant="100" id="yb0-qP-LlC"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="MYF-Ps-rpH">
+                                        <rect key="frame" x="101" y="0.0" width="376" height="100"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Qdk-LA-5So">
+                                                <rect key="frame" x="0.0" y="0.0" width="376" height="100"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" name="Greeen-Grass"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="KYx-i6-IZL" secondAttribute="bottom" constant="10" id="95h-Qz-pu8"/>
+                            <constraint firstItem="KYx-i6-IZL" firstAttribute="leading" secondItem="jVM-NY-TFv" secondAttribute="leading" constant="10" id="NGw-lD-Y3a"/>
+                            <constraint firstItem="KYx-i6-IZL" firstAttribute="top" secondItem="jVM-NY-TFv" secondAttribute="top" constant="10" id="RR9-Wn-XLr"/>
+                            <constraint firstAttribute="trailing" secondItem="KYx-i6-IZL" secondAttribute="trailing" constant="10" id="xnm-rL-Cu2"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="jVM-NY-TFv" firstAttribute="leading" secondItem="Kd2-Yn-2zr" secondAttribute="leading" constant="10" id="5rK-n9-tNV"/>
+                    <constraint firstAttribute="trailing" secondItem="jVM-NY-TFv" secondAttribute="trailing" constant="10" id="NWY-JW-M9j"/>
+                    <constraint firstItem="jVM-NY-TFv" firstAttribute="top" secondItem="Kd2-Yn-2zr" secondAttribute="top" constant="10" id="OO0-66-inm"/>
+                    <constraint firstAttribute="bottom" secondItem="jVM-NY-TFv" secondAttribute="bottom" constant="10" id="zvf-M4-VQW"/>
+                </constraints>
+            </tableViewCellContentView>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <integer key="value" value="10"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="pokeImage" destination="Chy-T5-tGq" id="HTj-c1-LaC"/>
+                <outlet property="pokeName" destination="Qdk-LA-5So" id="SV2-64-3zf"/>
+            </connections>
+            <point key="canvasLocation" x="3.6231884057971016" y="-48.214285714285715"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="Greeen-Grass">
+            <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
