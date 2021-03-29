@@ -11,6 +11,8 @@ import Foundation
 
 struct Detail: Decodable {
     var stats: [Stat]
+    var abilities: [Ability]
+    var types: [Type]
 }
 
 struct Stat: Decodable {
@@ -24,11 +26,11 @@ struct Name: Decodable {
 
 // ABILITIES
 
-struct Abilities: Decodable {
-    var abilities: [Ability]
+struct Ability: Decodable {
+    var ability: AbilityName
 }
 
-struct Ability: Decodable {
+struct AbilityName: Decodable {
     var name: String
     var url: String
 }
@@ -42,12 +44,8 @@ struct Description: Decodable {
 struct Effect: Decodable {
     var effect: String
 }
-
+ 
 // TYPE
-
-struct Types: Decodable {
-    var types: [Type]
-}
 
 struct Type: Decodable {
     var type: TypeName
@@ -92,3 +90,43 @@ struct ThirdSpecie: Decodable {
     var url: String
 }
 
+// DISPLAYABLE
+
+extension Stat: DisplayableDetails {
+ 
+    var pokeStat: Name {
+        self.stat
+    }
+    
+    var pokeBaseStat: Int {
+        self.base_stat
+    }
+    
+}
+
+
+extension Ability: DisplayableAbilities {
+
+    var AbilitieName: AbilityName {
+        self.ability
+    }
+    
+}
+
+ 
+extension Effect: DisplayableDesc {
+    
+    var effectText: String {
+        self.effect
+    }
+    
+}
+ 
+
+extension Type: DisplayableType {
+    
+    var PokeType: TypeName {
+        self.type
+    }
+
+}

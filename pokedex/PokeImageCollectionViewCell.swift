@@ -9,4 +9,6 @@ import UIKit
 
 class pokeImageCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var pokeImage: UIImageView!
+    
 }

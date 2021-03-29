@@ -9,4 +9,6 @@ import UIKit
 
 class PokeTypeCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet var type: UILabel!
+    
 }

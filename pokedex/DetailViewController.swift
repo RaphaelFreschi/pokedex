@@ -19,19 +19,24 @@ class DetailViewController: UIViewController {
     @IBOutlet var abilitiesView: UIView!
     @IBOutlet var evolutionView: UIView!
     
+    let statsController = StatsViewController()
+    
     var data: Displayable?
+    var types: [DisplayableType] = []
+    var stats: [DisplayableDetails] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("DATA -------- \(self.data!)")
+        print("DATA -------- \(self.data)")
         
-        if self.data?.url != "" {
+        if self.data?.url != nil {
             requestDetails(url: self.data!.url)
         }
         
-        
+        self.pokeName.text = data?.name
        
         
         configComponents()
@@ -94,7 +99,7 @@ extension DetailViewController: UICollectionViewDataSource {
         case pokeImages:
             return 6
         case pokeTypes:
-            return 6
+            return types.count
         default:
             return 0
         }
@@ -103,14 +108,20 @@ extension DetailViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        
         if collectionView == pokeImages {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageDatailCell", for: indexPath) as! pokeImageCollectionViewCell
+            
+        
+            cell.pokeImage.downloadedFrom(url: URL(string: "https://img.pokemondb.net/sprites/x-y/normal/\(self.data!.name).png")!)
             
             return cell
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as! PokeTypeCollectionViewCell
             
+        cell.type.text = self.types[indexPath.row].PokeType.name
+        
         return cell
             
         

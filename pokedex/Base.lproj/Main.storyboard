@@ -82,6 +82,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="OWH-sj-zlf" secondAttribute="bottom" id="xB1-HQ-0rS"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <connections>
+                                            <outlet property="pokeImage" destination="OWH-sj-zlf" id="Evo-L9-0D3"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -128,6 +131,9 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="type" destination="oLo-yk-cqu" id="5pR-IF-nBE"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -269,29 +275,35 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.37" translatesAutoresizingMaskIntoConstraints="NO" id="weJ-4q-67w">
-                                <rect key="frame" x="156" y="45" width="150" height="4"/>
+                            <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weJ-4q-67w">
+                                <rect key="frame" x="156" y="44" width="150" height="5"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
                             </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.37000000476837158" translatesAutoresizingMaskIntoConstraints="NO" id="JOk-2a-f36">
                                 <rect key="frame" x="156" y="98" width="150" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
                             </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.37000000476837158" translatesAutoresizingMaskIntoConstraints="NO" id="Tcy-y7-h4M">
                                 <rect key="frame" x="156" y="149" width="150" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
                             </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.37000000476837158" translatesAutoresizingMaskIntoConstraints="NO" id="pKs-lF-Z9U">
                                 <rect key="frame" x="156" y="196" width="150" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
                             </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.37000000476837158" translatesAutoresizingMaskIntoConstraints="NO" id="OaW-at-Nwc">
                                 <rect key="frame" x="156" y="248" width="150" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
                             </progressView>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.37000000476837158" translatesAutoresizingMaskIntoConstraints="NO" id="xO4-b7-252">
                                 <rect key="frame" x="156" y="296" width="150" height="4"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="progressTintColor" systemColor="systemPurpleColor"/>
                             </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hTk-uO-eAL"/>
@@ -300,12 +312,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ey-CY-3kS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1481" y="620"/>
+            <point key="canvasLocation" x="2728" y="648"/>
         </scene>
-        <!--View Controller-->
+        <!--Evolution View Controller-->
         <scene sceneID="wFG-j8-Njq">
             <objects>
-                <viewController id="G40-US-NlL" sceneMemberID="viewController">
+                <viewController id="G40-US-NlL" customClass="EvolutionViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QZU-N5-wGH">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -383,10 +395,18 @@
                             <constraint firstItem="5fK-BN-j0Z" firstAttribute="leading" secondItem="QZU-N5-wGH" secondAttribute="leadingMargin" id="Rqy-wo-3s2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstEvoImage" destination="VP7-Eg-yah" id="uZ5-c1-etu"/>
+                        <outlet property="firstText" destination="vkp-bY-nvd" id="fTe-cs-cNE"/>
+                        <outlet property="secondEvoImage" destination="whj-6l-Tq3" id="L01-PG-dcW"/>
+                        <outlet property="secondText" destination="JD3-Eo-4DK" id="TvN-Do-HDj"/>
+                        <outlet property="thirdEvoImage" destination="DMs-66-e1a" id="qWL-Db-6tn"/>
+                        <outlet property="thirdText" destination="Z08-XT-a1K" id="Het-Pb-XSF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uzJ-hU-BIl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2853.6231884057975" y="620.42410714285711"/>
+            <point key="canvasLocation" x="2078" y="648"/>
         </scene>
         <!--Abilities View Controller-->
         <scene sceneID="SFy-ON-Sme">
@@ -458,7 +478,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oQp-fw-gul" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2179.7101449275365" y="621.09375"/>
+            <point key="canvasLocation" x="1438" y="648"/>
         </scene>
     </scenes>
     <resources>
@@ -471,6 +491,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

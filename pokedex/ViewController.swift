@@ -78,9 +78,7 @@ extension ViewController: UITableViewDelegate {
                 requestAllwithPagination(url: self.nextUrl)
                 pokeTableView.reloadData()
             }
-            
         }
     }
-    
 }
 
