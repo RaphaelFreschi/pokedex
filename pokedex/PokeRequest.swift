@@ -28,5 +28,18 @@ extension ViewController {
         
     }
     
+}
+
+extension DetailViewController {
+    
+    func requestDetails(url: String) {
+        
+        AF.request(url).validate().responseDecodable(of: Detail.self) { (response) in
+            guard let pokeDetail = response.value else {return}
+            print("DETAIL --------- \(pokeDetail.stats)")
+
+        }
+        
+    }
     
 }

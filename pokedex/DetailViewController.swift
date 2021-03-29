@@ -19,11 +19,20 @@ class DetailViewController: UIViewController {
     @IBOutlet var abilitiesView: UIView!
     @IBOutlet var evolutionView: UIView!
     
-    var data:[String] = ["Bulbasaur", "Bulbasaur 2", "Bulbasaur 3"]
+    var data: Displayable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        print("DATA -------- \(self.data!)")
+        
+        if self.data?.url != "" {
+            requestDetails(url: self.data!.url)
+        }
+        
+        
+       
         
         configComponents()
         setSegControl()
@@ -121,11 +130,11 @@ extension DetailViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return self.data.count
+        return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return  data[row]
+        return ""
     }
     
     

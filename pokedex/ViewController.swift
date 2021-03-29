@@ -12,10 +12,8 @@ class ViewController: UIViewController {
     @IBOutlet var pokeTableView: UITableView!
     
     var items: [Displayable] = []
-    
+    var selectedItem: Displayable?
     var nextUrl = ""
-    
-    var lines = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +22,13 @@ class ViewController: UIViewController {
         configComponents()
         requestAllwithPagination(url: "https://pokeapi.co/api/v2/pokemon")
     
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destinationVC = segue.destination as? DetailViewController else {
+          return
+        }
+        destinationVC.data = selectedItem
     }
     
     func configComponents() {
@@ -59,6 +64,7 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
+        selectedItem = items[indexPath.row]
         
         performSegue(withIdentifier: "listToDetail", sender: nil)
         
@@ -66,9 +72,9 @@ extension ViewController: UITableViewDelegate {
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position  = scrollView.contentOffset.y
-        if position > (pokeTableView.contentSize.height - 100 - scrollView.frame.size.height){
+        if position > (pokeTableView.contentSize.height - 100 - scrollView.frame.size.height) {
             
-            if self.nextUrl != ""{
+            if self.nextUrl != "" {
                 requestAllwithPagination(url: self.nextUrl)
                 pokeTableView.reloadData()
             }
