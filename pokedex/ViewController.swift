@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         
         pokeTableView.dataSource = self
         pokeTableView.delegate = self
-        pokeTableView.register(UINib(nibName: "pokeCell", bundle: nil), forCellReuseIdentifier: "pokedexCell")
+        pokeTableView.register(UINib(nibName: "PokeCell", bundle: nil), forCellReuseIdentifier: "pokedexCell")
         
     }
     
