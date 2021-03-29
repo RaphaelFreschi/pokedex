@@ -11,16 +11,25 @@ class ViewController: UIViewController {
 
     @IBOutlet var pokeTableView: UITableView!
     
+    var items: [Displayable] = []
+    
+    var nextUrl = ""
+    
     var lines = 10
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+            
+        configComponents()
+        requestAllwithPagination(url: "https://pokeapi.co/api/v2/pokemon")
+    
+    }
+    
+    func configComponents() {
         pokeTableView.dataSource = self
         pokeTableView.delegate = self
         pokeTableView.register(UINib(nibName: "PokeCell", bundle: nil), forCellReuseIdentifier: "pokedexCell")
-        
     }
     
 }
@@ -28,14 +37,16 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.lines
+        print(self.items.count)
+        return self.items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokedexCell", for: indexPath) as! PokeTableViewCell
         
-        cell.initCell(name: "Bulbasaur")
+        cell.pokeName.text = self.items[indexPath.row].name
+        cell.pokeImage.downloadedFrom(url: URL(string: "https://img.pokemondb.net/sprites/x-y/normal/\(self.items[indexPath.row].name).png")!)
         
         return cell
     }
@@ -56,8 +67,12 @@ extension ViewController: UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let position  = scrollView.contentOffset.y
         if position > (pokeTableView.contentSize.height - 100 - scrollView.frame.size.height){
-            self.lines += 10
-            pokeTableView.reloadData()
+            
+            if self.nextUrl != ""{
+                requestAllwithPagination(url: self.nextUrl)
+                pokeTableView.reloadData()
+            }
+            
         }
     }
     
