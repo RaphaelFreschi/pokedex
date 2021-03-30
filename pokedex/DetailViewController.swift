@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     
     let statsController = StatsViewController()
     
+    var id: String?
     var data: Displayable?
     var types: [DisplayableType] = []
     var stats: [DisplayableDetails] = []
@@ -31,18 +32,20 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        print("DATA -------- \(self.data)")
-        
         if self.data?.url != nil {
             requestDetails(url: self.data!.url)
         }
+        
         
         DispatchQueue.main.async {
             self.requestData()
         }
         
-        self.pokeName.text = data?.name
+        print(self.data!.url)
+        self.id = self.data!.url.suffix(3).replacingOccurrences(of: "/", with: "")
+        self.pokeName.text = data!.name + " #\(self.id!)"
        
+        
         
         configComponents()
         setSegControl()
@@ -51,11 +54,16 @@ class DetailViewController: UIViewController {
     }
     
     func requestData() {
+        
         let cStats = children.first as? StatsViewController
         cStats?.requestStats(url: self.data!.url)
         
         let cAbilities = children.last as? AbilitiesViewController
         cAbilities?.requestAbilities(url: self.data!.url)
+        
+        let cEvolution = children[1] as? EvolutionViewController
+        cEvolution?.requestEvolution(url: "https://pokeapi.co/api/v2/evolution-chain/\(self.id!)")
+        
     }
     
     func configComponents() {
@@ -92,17 +100,6 @@ class DetailViewController: UIViewController {
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension DetailViewController: UICollectionViewDataSource {

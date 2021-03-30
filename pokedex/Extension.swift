@@ -35,3 +35,13 @@ extension UIImageView {
         return nil
     }
 }
+
+extension UIViewController {
+    
+    func createAlert(title:String, msg:String) {
+        let alert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}

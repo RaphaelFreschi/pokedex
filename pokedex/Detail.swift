@@ -10,7 +10,7 @@ import Foundation
 // STATS
 
 struct Detail: Decodable {
-    
+    var id: Int
     var stats: [Stat]
     var abilities: [Ability]
     var types: [Type]
@@ -93,6 +93,12 @@ struct ThirdSpecie: Decodable {
 
 // DISPLAYABLE
 
+extension Detail: DisplayableDetail {
+    var pokeID: Int {
+        self.id
+    }
+}
+
 extension Stat: DisplayableDetails {
  
     var pokeStat: Name {
@@ -130,4 +136,10 @@ extension Type: DisplayableType {
         self.type
     }
 
+}
+
+extension Chain: DisplayableEvolution {
+    var pokeEvolution: Evolves {
+        self.chain
+    }
 }

@@ -54,4 +54,8 @@ extension AbilitiesViewController: UITableViewDataSource {
 
 extension AbilitiesViewController: UITableViewDelegate {
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//    }
+    
 }

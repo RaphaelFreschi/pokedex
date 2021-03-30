@@ -107,7 +107,28 @@ extension AbilitiesViewController {
                 return}
             
             self.abilities = pokeAbilities.abilities
+            
             self.abilitiesTable.reloadData()
+        
+        }
+        
+    }
+    
+}
+
+extension EvolutionViewController {
+    
+    func requestEvolution(url: String) {
+        
+        AF.request(url).validate().responseDecodable(of: Chain.self) { (response) in
+           guard let pokeEvolution = response.value else {
+                return }
+            
+            print(pokeEvolution)
+            
+            self.evolution = pokeEvolution
+            
+            self.initEvolution(firstName: self.evolution.chain.species.name, secondName: self.evolution.chain.evolves_to[0].species.name, thirdName: self.evolution.chain.evolves_to[0].evolves_to[0].species.name)
         
         }
         

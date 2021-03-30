@@ -13,6 +13,7 @@ protocol Displayable {
 }
 
 protocol DisplayableDetail: Decodable {
+    var id: Int { get }
     var stats: [Stat] { get }
     var abilities: [Ability] { get }
     var types: [Type] { get }
@@ -35,5 +36,7 @@ protocol DisplayableType {
     var PokeType: TypeName { get }
 }
 
-
+protocol DisplayableEvolution {
+    var chain: Evolves { get }
+}
 

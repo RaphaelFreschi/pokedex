@@ -17,10 +17,12 @@ class EvolutionViewController: UIViewController {
     @IBOutlet var secondText: UILabel!
     @IBOutlet var thirdText: UILabel!
     
+    var evolution: DisplayableEvolution!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         // Do any additional setup after loading the view.
     }
     
