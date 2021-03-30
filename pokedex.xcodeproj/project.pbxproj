@@ -142,6 +142,58 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F4712C35261304B80043CC57 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4493C5F2611472000ED8E72 /* PokeTypeCollectionViewCell.swift */,
+				F4493C6926114F6600ED8E72 /* AbilitiesTableViewCell.swift */,
+				F4493C572611470500ED8E72 /* PokeImageCollectionViewCell.swift */,
+				F4C91E152610447D00B6DB79 /* PokeTableViewCell.swift */,
+				F4C91DD92610395600B6DB79 /* LaunchScreen.storyboard */,
+				F4C91DD42610395500B6DB79 /* Main.storyboard */,
+				F4C91E10261043DA00B6DB79 /* PokeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4712C36261304C20043CC57 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F487481A2611B10D002CDD44 /* Detail.swift */,
+				F487480826118BCF002CDD44 /* Pokemon.swift */,
+				F48748102611A788002CDD44 /* Displayable.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4712C37261304D70043CC57 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F4493C522611457E00ED8E72 /* DetailViewController.swift */,
+				F487482A2611D30C002CDD44 /* StatsViewController.swift */,
+				F4C91DD22610395500B6DB79 /* ViewController.swift */,
+				F487482F2611D53E002CDD44 /* EvolutionViewController.swift */,
+				F4493C6426114EE200ED8E72 /* AbilitiesViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F4712C38261304DE0043CC57 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F48748152611AC9B002CDD44 /* Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F4712C392613050E0043CC57 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F4874803261189CA002CDD44 /* PokeRequest.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
 		F4C91DC22610395500B6DB79 = {
 			isa = PBXGroup;
 			children = (
@@ -169,25 +221,13 @@
 			children = (
 				F4C91DCE2610395500B6DB79 /* AppDelegate.swift */,
 				F4C91DD02610395500B6DB79 /* SceneDelegate.swift */,
-				F48748102611A788002CDD44 /* Displayable.swift */,
-				F4C91DD42610395500B6DB79 /* Main.storyboard */,
 				F4C91DD72610395600B6DB79 /* Assets.xcassets */,
-				F4C91DD92610395600B6DB79 /* LaunchScreen.storyboard */,
-				F4493C6426114EE200ED8E72 /* AbilitiesViewController.swift */,
-				F48748152611AC9B002CDD44 /* Extension.swift */,
-				F4874803261189CA002CDD44 /* PokeRequest.swift */,
-				F4C91E10261043DA00B6DB79 /* PokeCell.xib */,
-				F487480826118BCF002CDD44 /* Pokemon.swift */,
-				F487481A2611B10D002CDD44 /* Detail.swift */,
-				F487482F2611D53E002CDD44 /* EvolutionViewController.swift */,
-				F4C91DD22610395500B6DB79 /* ViewController.swift */,
-				F487482A2611D30C002CDD44 /* StatsViewController.swift */,
-				F4493C522611457E00ED8E72 /* DetailViewController.swift */,
-				F4C91E152610447D00B6DB79 /* PokeTableViewCell.swift */,
-				F4493C572611470500ED8E72 /* PokeImageCollectionViewCell.swift */,
-				F4493C6926114F6600ED8E72 /* AbilitiesTableViewCell.swift */,
+				F4712C35261304B80043CC57 /* View */,
+				F4712C392613050E0043CC57 /* Service */,
+				F4712C38261304DE0043CC57 /* Extension */,
+				F4712C36261304C20043CC57 /* Model */,
+				F4712C37261304D70043CC57 /* ViewController */,
 				F4C91DDC2610395600B6DB79 /* Info.plist */,
-				F4493C5F2611472000ED8E72 /* PokeTypeCollectionViewCell.swift */,
 			);
 			path = pokedex;
 			sourceTree = "<group>";

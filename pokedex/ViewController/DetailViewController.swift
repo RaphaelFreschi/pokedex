@@ -21,6 +21,7 @@ class DetailViewController: UIViewController {
     
     let statsController = StatsViewController()
     
+    var detail: DisplayableDetail!
     var id: String?
     var data: Displayable?
     var types: [DisplayableType] = []
@@ -41,11 +42,6 @@ class DetailViewController: UIViewController {
             self.requestData()
         }
         
-        print(self.data!.url)
-        self.id = self.data!.url.suffix(3).replacingOccurrences(of: "/", with: "")
-        self.pokeName.text = data!.name + " #\(self.id!)"
-       
-        
         
         configComponents()
         setSegControl()
@@ -60,10 +56,12 @@ class DetailViewController: UIViewController {
         
         let cAbilities = children.last as? AbilitiesViewController
         cAbilities?.requestAbilities(url: self.data!.url)
-        
+    
+    }
+    
+    func requestEvolution(id: String) {
         let cEvolution = children[1] as? EvolutionViewController
-        cEvolution?.requestEvolution(url: "https://pokeapi.co/api/v2/evolution-chain/\(self.id!)")
-        
+        cEvolution?.requestEvolution(url: "https://pokeapi.co/api/v2/evolution-chain/\(id)")
     }
     
     func configComponents() {

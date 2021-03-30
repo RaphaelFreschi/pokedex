@@ -41,6 +41,13 @@ extension DetailViewController {
             
             self.types = pokeDetail.types
             
+            self.id = "\(pokeDetail.id)"
+            
+            DispatchQueue.main.async {
+                self.requestEvolution(id: "\(pokeDetail.id)")
+                self.pokeName.text = self.data!.name + " #\(self.id!)"
+            }
+            
             self.pokeTypes.reloadData()
             self.pokeImages.reloadData()
             
@@ -126,9 +133,13 @@ extension EvolutionViewController {
             
             print(pokeEvolution)
             
-            self.evolution = pokeEvolution
+            DispatchQueue.main.async {
+                self.evolution = pokeEvolution
+                
+                self.initEvolution(firstName: self.evolution.chain.species.name, secondName: self.evolution.chain.evolves_to[0].species.name, thirdName: self.evolution.chain.evolves_to[0].evolves_to[0].species.name)
+            }
             
-            self.initEvolution(firstName: self.evolution.chain.species.name, secondName: self.evolution.chain.evolves_to[0].species.name, thirdName: self.evolution.chain.evolves_to[0].evolves_to[0].species.name)
+
         
         }
         
