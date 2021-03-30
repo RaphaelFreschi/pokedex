@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-
+    
     @IBOutlet var pokeName: UILabel!
     @IBOutlet var pokeImages: UICollectionView!
     @IBOutlet var pokeTypes: UICollectionView!
@@ -128,11 +128,11 @@ extension DetailViewController: UICollectionViewDataSource {
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "typeCell", for: indexPath) as! PokeTypeCollectionViewCell
-            
+        
         cell.type.text = self.types[indexPath.row].PokeType.name
         
         return cell
-            
+        
         
     }
     

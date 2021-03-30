@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet var pokeTableView: UITableView!		
     @IBAction func refreshData(_ sender: Any) {
         self.view.layoutIfNeeded()
@@ -28,14 +28,14 @@ class ViewController: UIViewController {
         
         
         requestAllwithPagination(url: "https://pokeapi.co/api/v2/pokemon")
-    
         
-    
+        
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destinationVC = segue.destination as? DetailViewController else {
-          return
+            return
         }
         
         

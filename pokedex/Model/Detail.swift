@@ -50,7 +50,7 @@ struct Effect: Decodable {
 struct NameLanguage: Decodable {
     var name: String
 }
- 
+
 // TYPE
 
 struct Type: Decodable {
@@ -106,7 +106,7 @@ extension Detail: DisplayableDetail {
 }
 
 extension Stat: DisplayableDetails {
- 
+    
     var pokeStat: Name {
         self.stat
     }
@@ -119,14 +119,14 @@ extension Stat: DisplayableDetails {
 
 
 extension Ability: DisplayableAbilities {
-
+    
     var AbilitieName: AbilityName {
         self.ability
     }
     
 }
 
- 
+
 extension Effect: DisplayableDesc {
     
     var effectText: String {
@@ -134,14 +134,14 @@ extension Effect: DisplayableDesc {
     }
     
 }
- 
+
 
 extension Type: DisplayableType {
     
     var PokeType: TypeName {
         self.type
     }
-
+    
 }
 
 extension Chain: DisplayableEvolution {

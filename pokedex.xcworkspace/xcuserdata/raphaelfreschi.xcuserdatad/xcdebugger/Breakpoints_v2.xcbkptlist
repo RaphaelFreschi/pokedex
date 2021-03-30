@@ -135,22 +135,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1146A2B7-B284-4C72-9331-CE333EE12D0B"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pokedex/Service/PokeRequest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "requestDescription(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "2188CB53-700F-49E5-8E96-2DA243BEBB07"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -158,137 +142,9 @@
             filePath = "pokedex/Service/PokeRequest.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "requestDescription(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E39526EE-7348-4DAB-ABD2-2B481A4130A2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pokedex/Service/PokeRequest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "requestDetails(url:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "79EB3F5D-6D2A-4603-BE59-1A982BC4BDBD"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pokedex/Service/PokeRequest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "requestEvolution(url:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "79EB3F5D-6D2A-4603-BE59-1A982BC4BDBD - 3f32820c7fd651a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;pokedex.Chain, Alamofire.AFError&gt;) -&gt; () in pokedex.DetailViewController.requestEvolution(url: Swift.String) -&gt; ()"
-                  moduleName = "pokedex"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/raphaelfreschi/code/pokedex/pokedex/Service/PokeRequest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "863">
-               </Location>
-               <Location
-                  uuid = "79EB3F5D-6D2A-4603-BE59-1A982BC4BDBD - 4d33681308fd1f6f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;pokedex.Chain, Alamofire.AFError&gt;) -&gt; () in pokedex.DetailViewController.requestEvolution(url: Swift.String) -&gt; ()"
-                  moduleName = "pokedex"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/raphaelfreschi/code/pokedex/pokedex/Service/PokeRequest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "87">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "03B56748-4DD9-4F36-BADF-E73DF6ACBE96"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pokedex/Service/PokeRequest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "requestEvolution(url:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "03B56748-4DD9-4F36-BADF-E73DF6ACBE96 - 3f32820c7fd651a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;pokedex.Chain, Alamofire.AFError&gt;) -&gt; () in pokedex.DetailViewController.requestEvolution(url: Swift.String) -&gt; ()"
-                  moduleName = "pokedex"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/raphaelfreschi/code/pokedex/pokedex/Service/PokeRequest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "67"
-                  endingLineNumber = "67"
-                  offsetFromSymbolStart = "863">
-               </Location>
-               <Location
-                  uuid = "03B56748-4DD9-4F36-BADF-E73DF6ACBE96 - 4d33681308fd1f6f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in closure #1 (Alamofire.DataResponse&lt;pokedex.Chain, Alamofire.AFError&gt;) -&gt; () in pokedex.DetailViewController.requestEvolution(url: Swift.String) -&gt; ()"
-                  moduleName = "pokedex"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/raphaelfreschi/code/pokedex/pokedex/Service/PokeRequest.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "68"
-                  endingLineNumber = "68"
-                  offsetFromSymbolStart = "87">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "05638327-DA6B-4FB6-92BF-3FC98F62DFD4"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "pokedex/Service/PokeRequest.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "requestEvolution(url:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

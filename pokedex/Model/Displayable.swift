@@ -8,8 +8,8 @@
 import Foundation
 
 protocol Displayable {
-  var name: String { get }
-  var url: String { get } 
+    var name: String { get }
+    var url: String { get } 
 }
 
 protocol DisplayableDetail: Decodable {
@@ -20,8 +20,8 @@ protocol DisplayableDetail: Decodable {
 }
 
 protocol DisplayableDetails {
-  var pokeStat: Name { get }
-  var pokeBaseStat: Int { get }
+    var pokeStat: Name { get }
+    var pokeBaseStat: Int { get }
 }
 
 protocol DisplayableAbilities {

@@ -8,7 +8,7 @@
 import UIKit
 
 class PokeTableViewCell: UITableViewCell {
-
+    
     @IBOutlet var pokeImage: UIImageView!
     @IBOutlet var pokeName: UILabel!
     
@@ -23,10 +23,10 @@ class PokeTableViewCell: UITableViewCell {
     func initCell(name: String){
         self.pokeName.text = name
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
         
     }

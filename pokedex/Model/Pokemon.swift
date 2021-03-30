@@ -8,9 +8,9 @@
 import Foundation
 
 struct Pokemon: Decodable {
-  let next: String
-  let results: [Results]
-  
+    let next: String
+    let results: [Results]
+    
 }
 
 struct PokemonWithType: Decodable {
@@ -29,11 +29,11 @@ struct Results: Decodable {
 
 extension Results: Displayable {
     var pokeName: String {
-      name
+        name
     }
     
     var pokeUrl: String {
-      url
+        url
     }
 }
 
