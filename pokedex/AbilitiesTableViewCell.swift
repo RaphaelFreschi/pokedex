@@ -9,6 +9,8 @@ import UIKit
 
 class AbilitiesTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var nameAbility: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

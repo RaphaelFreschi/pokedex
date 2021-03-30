@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         guard let destinationVC = segue.destination as? DetailViewController else {
           return
         }
+        
+        
+        
         destinationVC.data = selectedItem
     }
     
@@ -65,6 +68,9 @@ extension ViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         print(indexPath.row)
         selectedItem = items[indexPath.row]
+        
+        let stats = StatsViewController()
+        stats.data = selectedItem
         
         performSegue(withIdentifier: "listToDetail", sender: nil)
         

@@ -10,6 +10,7 @@ import UIKit
 class AbilitiesViewController: UIViewController {
 
     @IBOutlet var abilitiesTable: UITableView!
+    var abilities: [DisplayableAbilities] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +37,14 @@ class AbilitiesViewController: UIViewController {
 extension AbilitiesViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return abilities.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "abilityCell", for: indexPath) as! AbilitiesTableViewCell
+        
+        cell.nameAbility.text = self.abilities[indexPath.row].AbilitieName.name.replacingOccurrences(of: "-", with: " ")
         
         return cell
     }

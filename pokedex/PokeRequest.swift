@@ -40,9 +40,6 @@ extension DetailViewController {
                 return}
             
             self.types = pokeDetail.types
-            self.stats = pokeDetail.stats
-            
-            self.setStats()
             
             self.pokeTypes.reloadData()
             self.pokeImages.reloadData()
@@ -52,41 +49,69 @@ extension DetailViewController {
         
     }
     
-    func setStats() {
-  
-        
-        for stat in self.stats {
-            
-//            switch stat.pokeStat.name {
-//            case "hp":
-//                self.HP.setProgress(Float(stat.pokeBaseStat), animated: true)
-//            case "attack":
-//                self.Attack.setProgress(Float(stat.pokeBaseStat), animated: true)
-//            case "defense":
-//                self.Defense.setProgress(Float(stat.pokeBaseStat), animated: true)
-//            case "special-attack":
-//                self.SAttack.setProgress(Float(stat.pokeBaseStat), animated: true)
-//            case "special-defense":
-//                self.SDefense.setProgress(Float(stat.pokeBaseStat), animated: true)
-//            case "speed":
-//                self.Speed.setProgress(Float(stat.pokeBaseStat), animated: true)
-//            default:
-//                print("N/A Stats")
-//            }
-            
-        }
-        
+}
 
+extension StatsViewController {
+    
+        func requestStats(url: String) {
         
-//        statsController.HP.setProgress(hp/100, animated: true)
-//        statsController.attack.setProgress(attack/100, animated: true)
-//        statsController.defense.setProgress(defense/100, animated: true)
-//        statsController.sAttack.setProgress(sAttack/10, animated: true)
-//        statsController.sDefense.setProgress(sDefense/100, animated: true)
-//        statsController.speed.setProgress(speed/100, animated: true)
+            
+            AF.request(url).validate().responseDecodable(of: Detail.self) { (response) in
+               guard let pokeStats = response.value else { print("ERRO")
+                    return}
+                
+                self.stats = pokeStats.stats
+                self.setStats()
+            
+            }
         
+        }
+            
+
+func setStats() {
+
+    
+    for stat in self.stats {
+        
+            switch stat.pokeStat.name {
+            case "hp":
+                self.HP.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            case "attack":
+                self.Attack.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            case "defense":
+                self.Defense.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            case "special-attack":
+                self.SAttack.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            case "special-defense":
+                self.SDefense.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            case "speed":
+                self.SAttack.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            default:
+                self.HP.setProgress(Float(stat.pokeBaseStat)/100, animated: true)
+            }
+        
+    
+        }
+    
+    
+    }
+    
+}
+
+extension AbilitiesViewController {
+    
+    func requestAbilities(url: String) {
+        
+        AF.request(url).validate().responseDecodable(of: Detail.self) { (response) in
+           guard let pokeAbilities = response.value else { print("ERRO")
+                return}
+            
+            self.abilities = pokeAbilities.abilities
+            self.abilitiesTable.reloadData()
+        
+        }
         
     }
     
-    
 }
+

@@ -10,6 +10,7 @@ import Foundation
 // STATS
 
 struct Detail: Decodable {
+    
     var stats: [Stat]
     var abilities: [Ability]
     var types: [Type]

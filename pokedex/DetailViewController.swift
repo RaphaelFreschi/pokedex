@@ -25,6 +25,7 @@ class DetailViewController: UIViewController {
     var types: [DisplayableType] = []
     var stats: [DisplayableDetails] = []
     
+    weak var delegate: ViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,10 @@ class DetailViewController: UIViewController {
             requestDetails(url: self.data!.url)
         }
         
+        DispatchQueue.main.async {
+            self.requestData()
+        }
+        
         self.pokeName.text = data?.name
        
         
@@ -43,6 +48,14 @@ class DetailViewController: UIViewController {
         setSegControl()
         
         
+    }
+    
+    func requestData() {
+        let cStats = children.first as? StatsViewController
+        cStats?.requestStats(url: self.data!.url)
+        
+        let cAbilities = children.last as? AbilitiesViewController
+        cAbilities?.requestAbilities(url: self.data!.url)
     }
     
     func configComponents() {

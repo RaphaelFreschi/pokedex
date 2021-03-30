@@ -160,7 +160,7 @@
                                 <rect key="frame" x="19" y="515" width="374" height="347"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="e95-M2-FGG" kind="embed" id="vtL-Fa-ycP"/>
+                                    <segue destination="e95-M2-FGG" kind="embed" identifier="detailToStats" id="vtL-Fa-ycP"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bQb-At-Jch">
@@ -225,10 +225,10 @@
             </objects>
             <point key="canvasLocation" x="28.985507246376812" y="88.392857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Stats View Controller-->
         <scene sceneID="RhA-gN-29T">
             <objects>
-                <viewController id="e95-M2-FGG" sceneMemberID="viewController">
+                <viewController id="e95-M2-FGG" customClass="StatsViewController" customModule="pokedex" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YMW-8I-iON">
                         <rect key="frame" x="0.0" y="0.0" width="374" height="347"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -309,6 +309,14 @@
                         <viewLayoutGuide key="safeArea" id="hTk-uO-eAL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="Attack" destination="JOk-2a-f36" id="a9b-eC-eUe"/>
+                        <outlet property="Defense" destination="Tcy-y7-h4M" id="4gd-0s-EID"/>
+                        <outlet property="HP" destination="weJ-4q-67w" id="3tp-g2-Xve"/>
+                        <outlet property="SAttack" destination="pKs-lF-Z9U" id="72U-6C-0hc"/>
+                        <outlet property="SDefense" destination="OaW-at-Nwc" id="XCb-Jf-WIu"/>
+                        <outlet property="Speed" destination="xO4-b7-252" id="xaV-8M-Rbc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5ey-CY-3kS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -459,6 +467,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="jxc-hy-sAg" secondAttribute="bottom" constant="5" id="l6l-sV-KQb"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameAbility" destination="BNP-RT-3oB" id="6XE-Od-lVE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
