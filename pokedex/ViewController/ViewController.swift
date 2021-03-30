@@ -9,18 +9,27 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet var pokeTableView: UITableView!
+    @IBOutlet var pokeTableView: UITableView!		
+    @IBAction func refreshData(_ sender: Any) {
+        self.view.layoutIfNeeded()
+    }
     
     var items: [Displayable] = []
+    var pokeWithType: DisplayableWithType!
     var selectedItem: Displayable?
     var nextUrl = ""
+    var type = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-            
+        
         configComponents()
+        
+        
         requestAllwithPagination(url: "https://pokeapi.co/api/v2/pokemon")
+    
+        
     
     }
     

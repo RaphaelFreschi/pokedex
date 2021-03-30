@@ -141,6 +141,17 @@ extension DetailViewController: UICollectionViewDataSource {
 
 extension DetailViewController: UICollectionViewDelegate {
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == pokeTypes {
+            print(indexPath.row)
+            self.navigationController?.popViewController(animated: true)
+            
+            let vc = self.navigationController?.viewControllers[0] as! ViewController
+            vc.requestWithType(url: self.types[indexPath.row].PokeType.url)
+            
+        }
+    }
+    
 }
 
 extension DetailViewController: UIPickerViewDataSource {

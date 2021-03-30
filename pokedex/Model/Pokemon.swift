@@ -13,6 +13,14 @@ struct Pokemon: Decodable {
   
 }
 
+struct PokemonWithType: Decodable {
+    var pokemon: [PokemonType]
+}
+
+struct PokemonType: Decodable {
+    var pokemon: Results
+}
+
 struct Results: Decodable {
     let name: String
     let url: String

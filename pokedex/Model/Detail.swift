@@ -59,6 +59,7 @@ struct Type: Decodable {
 
 struct TypeName: Decodable {
     var name: String
+    var url: String
 }
 
 // EVOLUTION

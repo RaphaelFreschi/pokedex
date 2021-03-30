@@ -31,7 +31,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Alu-cQ-usb" secondAttribute="trailing" id="ibB-cz-Ip0"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pokedex" id="oci-6w-5OI"/>
+                    <navigationItem key="navigationItem" title="Pokedex" id="oci-6w-5OI">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="arrow.clockwise" catalog="system" id="sde-Uu-loe">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="refreshData:" destination="BYZ-38-t0r" id="DCV-qb-DhB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pokeTableView" destination="Alu-cQ-usb" id="83t-63-CaC"/>
                         <segue destination="t7F-Re-FhZ" kind="show" identifier="listToDetail" id="ikJ-qd-wDv"/>
@@ -493,6 +500,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
         <image name="bulbasaur" width="60" height="60"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

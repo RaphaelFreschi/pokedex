@@ -10,7 +10,7 @@ import Alamofire
 
 extension ViewController {
     
-    func requestAllwithPagination(url: String){
+    func requestAllwithPagination(url: String) {
         
         AF.request(url).validate().responseDecodable(of: Pokemon.self) { (response) in
             guard let pokedex = response.value else {return}
@@ -23,6 +23,17 @@ extension ViewController {
             
             self.nextUrl = pokedex.next
             self.pokeTableView.reloadData()
+        }
+        
+        
+    }
+    
+    func requestWithType(url: String) {
+        
+        AF.request(url).validate().responseDecodable(of: PokemonWithType.self) { (response) in
+            guard let pokedex = response.value else {return}
+            
+//            self.pokeTableView.reloadData()
         }
         
         

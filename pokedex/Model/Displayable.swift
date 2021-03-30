@@ -40,3 +40,7 @@ protocol DisplayableEvolution {
     var chain: Evolves { get }
 }
 
+protocol DisplayableWithType {
+    var pokemon: [PokemonType] { get }
+}
+
