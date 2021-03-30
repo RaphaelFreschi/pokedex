@@ -54,8 +54,9 @@ extension AbilitiesViewController: UITableViewDataSource {
 
 extension AbilitiesViewController: UITableViewDelegate {
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        self.requestDescription(url: self.abilities[indexPath.row].AbilitieName.url)
+    }
     
 }

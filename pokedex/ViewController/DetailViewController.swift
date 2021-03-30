@@ -22,7 +22,7 @@ class DetailViewController: UIViewController {
     let statsController = StatsViewController()
     
     var detail: DisplayableDetail!
-    var id: String?
+    var evolution: DisplayableEvolution!
     var data: Displayable?
     var types: [DisplayableType] = []
     var stats: [DisplayableDetails] = []
@@ -56,12 +56,14 @@ class DetailViewController: UIViewController {
         
         let cAbilities = children.last as? AbilitiesViewController
         cAbilities?.requestAbilities(url: self.data!.url)
-    
+        
     }
     
     func requestEvolution(id: String) {
         let cEvolution = children[1] as? EvolutionViewController
         cEvolution?.requestEvolution(url: "https://pokeapi.co/api/v2/evolution-chain/\(id)")
+        
+        requestEvolution(url: "https://pokeapi.co/api/v2/evolution-chain/\(id)")
     }
     
     func configComponents() {
@@ -120,7 +122,6 @@ extension DetailViewController: UICollectionViewDataSource {
         if collectionView == pokeImages {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "imageDatailCell", for: indexPath) as! pokeImageCollectionViewCell
             
-        
             cell.pokeImage.downloadedFrom(url: URL(string: "https://img.pokemondb.net/sprites/x-y/normal/\(self.data!.name).png")!)
             
             return cell
@@ -149,10 +150,17 @@ extension DetailViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 1
+        return 3
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if self.evolution != nil {
+            let titles = ["\(self.evolution.chain.species.name)", "\(self.evolution.chain.evolves_to[0].species.name)", "\(self.evolution.chain.evolves_to[0].evolves_to[0].species.name)"]
+            
+            return titles[row]
+        }
+        
         return ""
     }
     

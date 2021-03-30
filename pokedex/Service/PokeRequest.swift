@@ -41,11 +41,11 @@ extension DetailViewController {
             
             self.types = pokeDetail.types
             
-            self.id = "\(pokeDetail.id)"
-            
+            self.detail = pokeDetail
+            print(self.detail.id)
             DispatchQueue.main.async {
-                self.requestEvolution(id: "\(pokeDetail.id)")
-                self.pokeName.text = self.data!.name + " #\(self.id!)"
+                self.requestEvolution(id: "\(self.detail.id)")
+                self.pokeName.text = self.data!.name + " #\(self.detail.id)"
             }
             
             self.pokeTypes.reloadData()
@@ -53,6 +53,23 @@ extension DetailViewController {
             
         }
 
+        
+    }
+    
+    func requestEvolution(url: String) {
+        
+        AF.request(url).validate().responseDecodable(of: Chain.self) { (response) in
+           guard let pokeEvolution = response.value else {
+                return }
+            
+            print(pokeEvolution)
+            
+            DispatchQueue.main.async {
+                self.evolution = pokeEvolution
+                self.pokeVariation.reloadAllComponents()
+            }
+        
+        }
         
     }
     
@@ -121,6 +138,22 @@ extension AbilitiesViewController {
         
     }
     
+    func requestDescription(url: String) {
+        
+        AF.request(url).validate().responseDecodable(of: Description.self) { (response) in
+           guard let pokeDesc = response.value else {
+                return }
+            
+            for desc in pokeDesc.effect_entries {
+                if desc.language.name == "en" {
+                    self.createAlert(title: "Description", msg: desc.effect)
+                }
+            }
+            
+        }
+        
+    }
+    
 }
 
 extension EvolutionViewController {
@@ -138,8 +171,6 @@ extension EvolutionViewController {
                 
                 self.initEvolution(firstName: self.evolution.chain.species.name, secondName: self.evolution.chain.evolves_to[0].species.name, thirdName: self.evolution.chain.evolves_to[0].evolves_to[0].species.name)
             }
-            
-
         
         }
         

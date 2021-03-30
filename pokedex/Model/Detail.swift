@@ -44,6 +44,11 @@ struct Description: Decodable {
 
 struct Effect: Decodable {
     var effect: String
+    var language: NameLanguage
+}
+
+struct NameLanguage: Decodable {
+    var name: String
 }
  
 // TYPE
